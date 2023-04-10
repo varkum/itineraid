@@ -1,0 +1,21 @@
+<div class="flex flex-col">
+Welcome!
+
+<% if Current.user.present? %>
+	<%= Current.user.name %>
+	<div class="block">
+		<%= button_to "Sign out", sign_out_path, method: :delete %>
+	</div>
+	
+	<%= link_to "Add trip", new_trip_path %>
+<% else %>
+	<div class="inline">
+		<%= link_to "Sign in", sign_in_path %>
+	</div>
+	<div class="flex">
+		<%= link_to "Sign up", sign_up_path %>
+	</div>
+<% end %>
+</div>
+
+
