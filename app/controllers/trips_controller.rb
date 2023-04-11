@@ -25,7 +25,7 @@ class TripsController < ApplicationController
   def update
     update_timeline
     update_location
-    redirect_to trip_url(@trip), notice: "Trip was successfully updated." 
+    redirect_to user_trip_url(@trip), notice: "Trip was successfully updated." 
   end
 
   def destroy
@@ -46,7 +46,7 @@ class TripsController < ApplicationController
     end
     
     def update_timeline
-      @trip.update(to: trip_params[:to], from: trip_params[:place])
+      @trip.update(from: trip_params[:from], to: trip_params[:to])
     end 
     
     def update_location
