@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_10_200829) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_144850) do
   create_table "locations", force: :cascade do |t|
     t.string "place"
     t.string "country"
@@ -21,8 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_200829) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.datetime "start"
-    t.datetime "end"
+    t.datetime "from"
+    t.datetime "to"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

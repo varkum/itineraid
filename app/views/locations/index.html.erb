@@ -7,7 +7,7 @@ Welcome!
 		<%= button_to "Sign out", sign_out_path, method: :delete %>
 	</div>
 	
-	<%= link_to "Add trip", new_trip_path %>
+	<%= link_to "Add trip", new_user_trip_path(Current.user) %>
 <% else %>
 	<div class="inline">
 		<%= link_to "Sign in", sign_in_path %>

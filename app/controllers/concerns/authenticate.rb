@@ -12,6 +12,12 @@ module Authenticate
     end 
   end 
   
+  def authenticate_with_credentials(email:, password:)
+    user = User.find_by(email: email).authenticate(password)
+    session[:user_id] = user.id
+    return user
+  end 
+  
   def user_signed_in?
     Current.user.present?
   end 

@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end 
   
   def create
-    if (user = sign_user_in_with email: params[:email], password: params[:password])
+    if (user = authenticate_with_credentials email: params[:email], password: params[:password])
       redirect_to user_path(user.id)
     else 
       redirect_to sign_in_path, alert: "Your email or password was incorrect. Please try again"
@@ -17,12 +17,6 @@ class SessionsController < ApplicationController
   end 
   
   private 
-  
-  def sign_user_in_with(email:, password:)
-    user = User.find_by(email: email).authenticate(password)
-    session[:user_id] = user.id
-    return user
-  end 
   
   def signout
     session[:user_id] = nil

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :locations
   resources :users do 
-    resources :trips
+    resources :trips, module: 'user'
   end 
+  
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
