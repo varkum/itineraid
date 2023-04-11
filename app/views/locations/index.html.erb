@@ -8,6 +8,8 @@ Welcome!
 	</div>
 	
 	<%= link_to "Add trip", new_user_trip_path(Current.user) %>
+	
+	<%= link_to "My trips", user_trips_path(Current.user) %>
 <% else %>
 	<div class="inline">
 		<%= link_to "Sign in", sign_in_path %>
@@ -15,6 +17,10 @@ Welcome!
 	<div class="flex">
 		<%= link_to "Sign up", sign_up_path %>
 	</div>
+<% end %>
+
+<% Location.all.each do |location| %>
+	<%= location.place%> , <%= location.country %>
 <% end %>
 </div>
 

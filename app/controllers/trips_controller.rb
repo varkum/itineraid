@@ -23,12 +23,14 @@ class TripsController < ApplicationController
   end
 
   def update
+    update_timeline
+    update_location
     redirect_to trip_url(@trip), notice: "Trip was successfully updated." 
   end
 
   def destroy
     @trip.destroy
-    redirect_to trips_url, notice: "Trip was successfully destroyed."
+    redirect_to user_trips_url, notice: "Trip was successfully destroyed."
    
   end
 
@@ -42,5 +44,13 @@ class TripsController < ApplicationController
     def trip_params
       params.require(:trip).permit(:from, :to, :place, :country)
     end
+    
+    def update_timeline
+      @trip.update(to: trip_params[:to], from: trip_params[:place])
+    end 
+    
+    def update_location
+      @trip.location.update(place: trip_params[:place], country: trip_params[:country])
+    end 
     
 end

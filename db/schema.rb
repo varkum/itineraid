@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_11_144850) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_232225) do
   create_table "locations", force: :cascade do |t|
     t.string "place"
     t.string "country"
@@ -37,6 +37,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_144850) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "locations", "trips"
   add_foreign_key "trips", "users"
 end
