@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post "sign_in", to: "sessions#create"
   delete "sign_out", to: "sessions#destroy"
   
-  resources :users, path: '' do 
+  resources :users, only: %i[show new edit create update destroy], path: '' do 
     resources :trips
   end 
   

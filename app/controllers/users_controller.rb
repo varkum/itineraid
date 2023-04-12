@@ -23,9 +23,6 @@ class UsersController < ApplicationController
       authenticate_with_credentials email: @user.email, password: @user.password
       redirect_to user_url(@user), notice: "User was successfully created." 
     end 
-        
-     
-    
   end
 
   # PATCH/PUT /users/1 or /users/1.json
