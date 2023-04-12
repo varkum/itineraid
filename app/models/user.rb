@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  include Tripable
+  include Tripper
   
   has_secure_password
   validates :email, presence: true, uniqueness: true

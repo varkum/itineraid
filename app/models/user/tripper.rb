@@ -1,4 +1,4 @@
-module User::Tripable
+module User::Tripper
   extend ActiveSupport::Concern
   
   included do
