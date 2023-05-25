@@ -1,27 +1,28 @@
 <div class="flex flex-col">
-Welcome!
+	Welcome!
 
-<% if Current.user.present? %>
-	<%= Current.user.name %>
-	<div class="block">
-		<%= button_to "Sign out", sign_out_path, method: :delete %>
-	</div>
+	<% if Current.user.present? %>
+		<%= Current.user.name %>
+		<div class="block">
+			<%= button_to "Sign out", sign_out_path, method: :delete %>
+		</div>
 	
-	<%= link_to "Add trip", new_user_trip_path(Current.user) %>
+		<%= link_to "Add trip", new_user_trip_path(Current.user) %>
 	
-	<%= link_to "My trips", user_trips_path(Current.user) %>
-<% else %>
-	<div class="inline">
-		<%= link_to "Sign in", sign_in_path %>
-	</div>
-	<div class="flex">
-		<%= link_to "Sign up", sign_up_path %>
-	</div>
-<% end %>
+		<%= link_to "My trips", user_trips_path(Current.user) %>
+	<% else %>
+		<div class="inline">
+			<%= link_to "Sign in", sign_in_path %>
+		</div>
+		<div class="flex">
+			<%= link_to "Sign up", sign_up_path %>
+		</div>
+	<% end %>
 
-<% Location.all.each do |location| %>
-	<%= location.place%> , <%= location.country %>
-<% end %>
+	<div class="mt-8"> 
+		<h2 class="font-bold text-2xl">Locations</h2>
+		<% Location.all.each do |location| %>
+			<%= location.place%> , <%= location.country %>
+		<% end %>
+	</div>
 </div>
-
-

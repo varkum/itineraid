@@ -3,6 +3,6 @@
 
   <%= render "form", trip: @trip %>
 
-  <%= link_to "Show this trip", user_trip_path(@trip), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to trips", user_trips_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Show this trip", my_trip_path_for(@trip), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back to trips", my_trips_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

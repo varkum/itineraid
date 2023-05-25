@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   def show
     render "locations/index"
   end
+  
+  def account
+  end 
 
   # GET /users/new
   def new

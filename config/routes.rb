@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   resources :users, except: :index, path: '' do 
     resources :trips
+    get "account"
   end 
   
 end

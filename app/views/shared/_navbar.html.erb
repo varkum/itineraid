@@ -1,0 +1,27 @@
+<div class="w-full fixed top-0 left-0 flex justify-between px-36 mt-4">
+		<%= link_to root_path do %>
+			<h3 class="font-bold text-xl">Itineraid</h3>
+		<% end %>
+		
+		<% if Current.user.present? %>
+			<div class="flex gap-x-8">
+				<div>
+					<%= link_to "My account", user_account_path(Current.user)%>
+				</div>
+			
+				<div>
+					<%= link_to "Add trip", new_user_trip_path(Current.user) %>
+				</div>
+				<div>
+					<%= link_to "My trips", user_trips_path(Current.user) %>
+				</div>
+			
+				<div>
+					<%= button_to "Sign out", sign_out_path, method: :delete %>
+				</div>
+			</div>
+		<% end %>
+	
+</div>
+	
+	
