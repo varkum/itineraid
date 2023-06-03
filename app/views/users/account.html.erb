@@ -1,1 +1,8 @@
-Hello <%= Current.user.name%>!
+<div class="flex flex-col">
+	Hello <%= Current.user.name%>!
+	<div>
+		Email: <%= Current.user.email%>
+	</div>
+	<%= link_to "Change password", edit_password_path  %>
+	<%= button_to "Delete your account", user_path(Current.user), method: :delete, class: "text-red-500", form: {data: {turbo_confirm: 'Are you sure?'}}%>
+</div>

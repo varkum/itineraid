@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
   delete "sign_out", to: "sessions#destroy"
+  get "edit_password", to: "passwords#edit"
   
   resources :users, except: :index, path: '' do 
     resources :trips

@@ -1,0 +1,15 @@
+<%= form_with model: @user do |form| %>
+	<div class="block">
+		<%= form.label "New password:"%>
+		<%= form.password_field :password %>
+	</div>
+	
+	<div class="block">
+		<%= form.label "Confirm new password:"%>
+		<%= form.password_field :password_confirmation %>
+	</div>
+	
+	<div class="block">
+		<%= form.submit "Change password" %>
+	</div>
+<% end %>
